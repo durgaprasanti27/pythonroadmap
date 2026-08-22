@@ -9,7 +9,7 @@ for i in range(k):
      print(i)
 
 
-m=8
-while m>2:
-    print(m)
-    m=m-1
+n=8
+while n>2:
+    print(n)
+    n=n-1
