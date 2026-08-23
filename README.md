@@ -100,3 +100,79 @@ By completing this roadmap, you'll build:
 
 ---
 *Start with Phase 1 by exploring the existing `src/` files, then progress through each phase systematically!*
+
+## 🎯 Python Coding Standards
+Consistent code style makes this repo easier to learn from and maintain. Follow these guidelines:
+
+### Naming Conventions
+- **Variables**: `snake_case` (e.g., `user_name`, `total_hours`)
+- **Functions**: `snake_case` with descriptive names (e.g., `calculate_total()`, `fetch_api_data()`)
+- **Classes**: `PascalCase` (e.g., `class BankAccount:`)
+- **Constants**: `UPPER_SNAKE_CASE` (e.g., `MAX_RETRIES = 3`)
+
+### Code Formatting
+- **Indentation**: 4 spaces per indent level (never tabs)
+- **Line length**: Keep lines under 88 characters when possible
+- **Blank lines**: Two blank lines before top-level function/class definitions, one blank line between methods in a class
+- **Imports**: Standard library first, third-party second, local imports last
+  ```python
+  import json        # stdlib
+  import pandas as pd # third-party
+  from src.variables import load_data # local
+  ```
+
+### Comments & Documentation
+- **Docstrings**: Use triple-quoted docstrings for all functions/classes following NumPy format
+- **Inline comments**: Explain *why*, not *what* (the code already shows what)
+- **TODO/FIXME**: Use `TODO()` for future work, `FIXME()` for bugs needing attention
+  ```python
+  # TODO: Add error handling for network failures
+  # FIXME: This causes crash when input is negative
+  ```
+
+### Error Handling
+- Use `try/except` blocks for operations that can fail
+- Catch specific exceptions, not bare `except:`
+- Log meaningful error messages (covered in later phases)
+
+### Code Quality
+- Keep functions focused on one task (Single Responsibility Principle)
+- Return values instead of printing inside functions when possible
+- Use type hints for function parameters/returns (Phase 3+)
+
+## 🏩 Git Best Practices
+
+Maintain a clean and trackable repository with these Git habits:
+
+### Commit Messages
+- Use imperative tense: "Fix bug", not "Fixed bug"
+- Include scope (e.g., "src/Controlflow.py") and purpose
+- Keep it concise: max 50 chars for basic commits
+
+### Committing Habits
+- Commit small changes frequently
+- Never commit debug prints/temporary code
+- Use branch for experiments before merging to main
+
+### Repository Hygiene
+- Add `.gitignore` for: __pycache__, .env, logs, .pytest_cache
+- Never commit secrets (e.g., API keys)
+- Run "git lint" checks periodically
+
+### Branching Strategy
+- Main branch for stable code
+- Feature branches for new work (delete after merge)
+- Use meaningful branch names: `feat-login-form", not "fix1"
+
+### Push Discipline
+- Commit changes to main weekly minimum
+- Push before restarting development session
+- Use "git push --force-with-license" when needed
+
+```
+# .gitignore template
+__pycache__/
+.env
+*.log
+.pytest_cache/
+```
